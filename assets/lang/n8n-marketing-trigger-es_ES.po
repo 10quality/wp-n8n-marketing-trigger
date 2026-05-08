@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es_ES\n"
+"Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
+"MIME-Version: 1.0.0\n"
+"PO-Creation-Date: 2026-05-08 16:17:06\n"
+"POT-Creation-Date: 2026-05-08 16:17:05\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Project-Id-Version: N8nMarketingTrigger\n"
+"X-Domain: n8n-marketing-trigger\n"
+"X-Generator: WordPress MVC Commands 1.1\n"
+
+#: /app/Controllers/AdminController.php:24
+#: /app/Controllers/CampaignController.php:115
+msgid "Test campaign sent successfully"
+msgstr "Campaña de prueba enviada correctamente"
+
+#: /app/Controllers/AdminController.php:26
+#: /app/Controllers/CampaignController.php:116
+msgid "Campaign sent successfully"
+msgstr "Campaña enviada correctamente"
+
+#: /app/Controllers/AdminController.php:28
+#: /app/Controllers/CampaignController.php:65
+#: /app/Models/Campaign.php:187
+msgid "Unable to send campaign. Please verify your URL settings and try again."
+msgstr "No se pudo enviar la campaña. Verifica la configuración de URL e inténtalo de nuevo."
+
+#: /app/Controllers/CampaignAdminController.php:45
+msgid "Write your campaign instructions here (for AI)..."
+msgstr "Escribe aquí las instrucciones de tu campaña (para IA)..."
+
+#: /app/Controllers/CampaignAdminController.php:58
+#: /app/Controllers/CampaignAdminController.php:59
+msgid "Campaign saved successfully"
+msgstr "Campaña guardada correctamente"
+
+#: /app/Controllers/CampaignController.php:40
+msgid "You do not have permission to perform this action."
+msgstr "No tienes permisos para realizar esta acción."
+
+#: /app/Controllers/CampaignController.php:46
+msgid "Campaign was not found."
+msgstr "No se encontró la campaña."
+
+#: /app/Controllers/CampaignController.php:51
+msgid "Missing target URL in settings."
+msgstr "Falta la URL de destino en la configuración."
+
+#: /app/Controllers/CampaignController.php:147
+msgid "Unable to reach webhook endpoint."
+msgstr "No se pudo conectar con el endpoint del webhook."
+
+#: /app/Controllers/CampaignController.php:156
+#, php-format
+msgid "Webhook error (%1$d): %2$s"
+msgstr "Error del webhook (%1$d): %2$s"
+
+#: /app/Controllers/CampaignController.php:164
+#, php-format
+msgid "Webhook request failed with status %d."
+msgstr "La solicitud al webhook falló con estado %d."
+
+#: /app/Models/Campaign.php:64
+msgid "Campaign Settings"
+msgstr "Configuración de campaña"
+
+#: /app/Models/Campaign.php:72
+msgid "Platforms"
+msgstr "Plataformas"
+
+#: /app/Models/Campaign.php:79
+msgid "Select platforms..."
+msgstr "Selecciona plataformas..."
+
+#: /app/Models/Campaign.php:85
+msgid "With cover image"
+msgstr "Con imagen de portada"
+
+#: /app/Models/Campaign.php:87
+msgid "If enabled, a cover image will be generated for this campaign using AI. The image will be based on the campaign title and body content."
+msgstr "Si se activa, se generará una imagen de portada para esta campaña usando IA. La imagen se basará en el título y el contenido de la campaña."
+
+#: /app/Models/Campaign.php:91
+msgid "Cover image instructions"
+msgstr "Instrucciones para la imagen de portada"
+
+#: /app/Models/Campaign.php:92
+msgid "Provide specific instructions for the AI to generate the cover image. For example, you can specify the style, colors, or elements you want in the image."
+msgstr "Proporciona instrucciones específicas para que la IA genere la imagen de portada. Por ejemplo, puedes especificar el estilo, colores o elementos que deseas en la imagen."
+
+#: /app/Models/Campaign.php:105
+msgid "Additional images"
+msgstr "Imágenes adicionales"
+
+#: /app/Models/Campaign.php:107
+msgid "If enabled, additional images will be generated for this campaign using AI. The images will be based on the campaign title and body content."
+msgstr "Si se activa, se generarán imágenes adicionales para esta campaña usando IA. Las imágenes se basarán en el título y el contenido de la campaña."
+
+#: /app/Models/Campaign.php:117
+msgid "Trigger Settings"
+msgstr "Configuración de disparador"
+
+#: /app/Models/Campaign.php:186
+msgid "Sending..."
+msgstr "Enviando..."
+
+#: /app/Models/Campaign.php:224
+msgid "WordPress blog"
+msgstr "Blog de WordPress"
+
+#: /app/Models/Campaign.php:225
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: /app/Models/Campaign.php:226
+msgid "Facebook"
+msgstr "Facebook"
+
+#: /app/Models/Campaign.php:227
+msgid "Instagram"
+msgstr "Instagram"
+
+#: /app/Models/Campaign.php:228
+msgid "X"
+msgstr "X"
+
+#: /app/Models/Settings.php:34
+#: /app/Models/Settings.php:37
+msgid "Marketing campaigns"
+msgstr "Campañas de marketing"
+
+#: /app/Models/Settings.php:40
+msgid "Settings saved successfully"
+msgstr "Configuración guardada correctamente"
+
+#: /app/Models/Settings.php:43
+msgid "Webhooks"
+msgstr "Webhooks"
+
+#: /app/Models/Settings.php:47
+msgid "Method"
+msgstr "Método"
+
+#: /app/Models/Settings.php:57
+msgid "Test URL"
+msgstr "URL de prueba"
+
+#: /app/Models/Settings.php:66
+msgid "Production URL"
+msgstr "URL de producción"
+
+#: /app/Models/Settings.php:76
+msgid "Payload"
+msgstr "Carga útil"
+
+#: /assets/views/campaign/trigger-buttons.php:9
+msgid "Save this campaign before sending triggers."
+msgstr "Guarda esta campaña antes de enviar disparadores."
+
+#: /assets/views/campaign/trigger-buttons.php:19
+msgid "Send test"
+msgstr "Enviar prueba"
+
+#: /assets/views/campaign/trigger-buttons.php:29
+msgid "Send"
+msgstr "Enviar"
+
+#: /assets/views/settings/payload-example.php:8
+msgid "Example"
+msgstr "Ejemplo"

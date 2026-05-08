@@ -24,7 +24,7 @@ return [
         ],
     ],
     'localize' => [
-        'enabled' => false,
+        'enabled' => true,
         'path' => __DIR__ . '/../../assets/lang/',
         'textdomain' => 'n8n-marketing-trigger',
         'unload' => false,

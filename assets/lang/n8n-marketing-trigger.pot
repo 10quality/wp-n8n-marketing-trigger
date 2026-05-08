@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+"Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
+"MIME-Version: 1.0.0\n"
+"POT-Creation-Date: 2026-05-08 16:17:05\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Project-Id-Version: N8nMarketingTrigger\n"
+"X-Domain: n8n-marketing-trigger\n"
+"X-Generator: WordPress MVC Commands 1.1\n"
+
+#: /app/Controllers/AdminController.php:24
+#: /app/Controllers/CampaignController.php:115
+msgid "Test campaign sent successfully"
+msgstr ""
+
+#: /app/Controllers/AdminController.php:26
+#: /app/Controllers/CampaignController.php:116
+msgid "Campaign sent successfully"
+msgstr ""
+
+#: /app/Controllers/AdminController.php:28
+#: /app/Controllers/CampaignController.php:65
+#: /app/Models/Campaign.php:187
+msgid "Unable to send campaign. Please verify your URL settings and try again."
+msgstr ""
+
+#: /app/Controllers/CampaignAdminController.php:45
+msgid "Write your campaign instructions here (for AI)..."
+msgstr ""
+
+#: /app/Controllers/CampaignAdminController.php:58
+#: /app/Controllers/CampaignAdminController.php:59
+msgid "Campaign saved successfully"
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:40
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:46
+msgid "Campaign was not found."
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:51
+msgid "Missing target URL in settings."
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:147
+msgid "Unable to reach webhook endpoint."
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:156
+#, php-format
+msgid "Webhook error (%1$d): %2$s"
+msgstr ""
+
+#: /app/Controllers/CampaignController.php:164
+#, php-format
+msgid "Webhook request failed with status %d."
+msgstr ""
+
+#: /app/Models/Campaign.php:64
+msgid "Campaign Settings"
+msgstr ""
+
+#: /app/Models/Campaign.php:72
+msgid "Platforms"
+msgstr ""
+
+#: /app/Models/Campaign.php:79
+msgid "Select platforms..."
+msgstr ""
+
+#: /app/Models/Campaign.php:85
+msgid "With cover image"
+msgstr ""
+
+#: /app/Models/Campaign.php:87
+msgid "If enabled, a cover image will be generated for this campaign using AI. The image will be based on the campaign title and body content."
+msgstr ""
+
+#: /app/Models/Campaign.php:91
+msgid "Cover image instructions"
+msgstr ""
+
+#: /app/Models/Campaign.php:92
+msgid "Provide specific instructions for the AI to generate the cover image. For example, you can specify the style, colors, or elements you want in the image."
+msgstr ""
+
+#: /app/Models/Campaign.php:105
+msgid "Additional images"
+msgstr ""
+
+#: /app/Models/Campaign.php:107
+msgid "If enabled, additional images will be generated for this campaign using AI. The images will be based on the campaign title and body content."
+msgstr ""
+
+#: /app/Models/Campaign.php:117
+msgid "Trigger Settings"
+msgstr ""
+
+#: /app/Models/Campaign.php:186
+msgid "Sending..."
+msgstr ""
+
+#: /app/Models/Campaign.php:224
+msgid "WordPress blog"
+msgstr ""
+
+#: /app/Models/Campaign.php:225
+msgid "LinkedIn"
+msgstr ""
+
+#: /app/Models/Campaign.php:226
+msgid "Facebook"
+msgstr ""
+
+#: /app/Models/Campaign.php:227
+msgid "Instagram"
+msgstr ""
+
+#: /app/Models/Campaign.php:228
+msgid "X"
+msgstr ""
+
+#: /app/Models/Settings.php:34
+#: /app/Models/Settings.php:37
+msgid "Marketing campaigns"
+msgstr ""
+
+#: /app/Models/Settings.php:40
+msgid "Settings saved successfully"
+msgstr ""
+
+#: /app/Models/Settings.php:43
+msgid "Webhooks"
+msgstr ""
+
+#: /app/Models/Settings.php:47
+msgid "Method"
+msgstr ""
+
+#: /app/Models/Settings.php:57
+msgid "Test URL"
+msgstr ""
+
+#: /app/Models/Settings.php:66
+msgid "Production URL"
+msgstr ""
+
+#: /app/Models/Settings.php:76
+msgid "Payload"
+msgstr ""
+
+#: /assets/views/campaign/trigger-buttons.php:9
+msgid "Save this campaign before sending triggers."
+msgstr ""
+
+#: /assets/views/campaign/trigger-buttons.php:19
+msgid "Send test"
+msgstr ""
+
+#: /assets/views/campaign/trigger-buttons.php:29
+msgid "Send"
+msgstr ""
+
+#: /assets/views/settings/payload-example.php:8
+msgid "Example"
+msgstr ""
