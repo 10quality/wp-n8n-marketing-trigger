@@ -4,7 +4,7 @@ msgstr ""
 "Language: en\n"
 "Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
 "MIME-Version: 1.0.0\n"
-"POT-Creation-Date: 2026-05-08 16:17:05\n"
+"POT-Creation-Date: 2026-05-08 16:23:03\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Project-Id-Version: N8nMarketingTrigger\n"
 "X-Domain: n8n-marketing-trigger\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: /app/Controllers/AdminController.php:28
 #: /app/Controllers/CampaignController.php:65
-#: /app/Models/Campaign.php:187
+#: /app/Models/Campaign.php:188
 msgid "Unable to send campaign. Please verify your URL settings and try again."
 msgstr ""
 
@@ -61,67 +61,103 @@ msgstr ""
 msgid "Webhook request failed with status %d."
 msgstr ""
 
-#: /app/Models/Campaign.php:64
+#: /app/Models/Campaign.php:53
+msgid "Campaigns"
+msgstr ""
+
+#: /app/Models/Campaign.php:54
+msgid "Campaign"
+msgstr ""
+
+#: /app/Models/Campaign.php:55
+msgid "Add New"
+msgstr ""
+
+#: /app/Models/Campaign.php:56
+msgid "Add New Campaign"
+msgstr ""
+
+#: /app/Models/Campaign.php:57
+msgid "Edit Campaign"
+msgstr ""
+
+#: /app/Models/Campaign.php:58
+msgid "New Campaign"
+msgstr ""
+
+#: /app/Models/Campaign.php:59
+msgid "View Campaign"
+msgstr ""
+
+#: /app/Models/Campaign.php:60
+msgid "Search Campaigns"
+msgstr ""
+
+#: /app/Models/Campaign.php:61
+msgid "No campaigns found"
+msgstr ""
+
+#: /app/Models/Campaign.php:65
 msgid "Campaign Settings"
 msgstr ""
 
-#: /app/Models/Campaign.php:72
+#: /app/Models/Campaign.php:73
 msgid "Platforms"
 msgstr ""
 
-#: /app/Models/Campaign.php:79
+#: /app/Models/Campaign.php:80
 msgid "Select platforms..."
 msgstr ""
 
-#: /app/Models/Campaign.php:85
+#: /app/Models/Campaign.php:86
 msgid "With cover image"
 msgstr ""
 
-#: /app/Models/Campaign.php:87
+#: /app/Models/Campaign.php:88
 msgid "If enabled, a cover image will be generated for this campaign using AI. The image will be based on the campaign title and body content."
 msgstr ""
 
-#: /app/Models/Campaign.php:91
+#: /app/Models/Campaign.php:92
 msgid "Cover image instructions"
 msgstr ""
 
-#: /app/Models/Campaign.php:92
+#: /app/Models/Campaign.php:93
 msgid "Provide specific instructions for the AI to generate the cover image. For example, you can specify the style, colors, or elements you want in the image."
 msgstr ""
 
-#: /app/Models/Campaign.php:105
+#: /app/Models/Campaign.php:106
 msgid "Additional images"
 msgstr ""
 
-#: /app/Models/Campaign.php:107
+#: /app/Models/Campaign.php:108
 msgid "If enabled, additional images will be generated for this campaign using AI. The images will be based on the campaign title and body content."
 msgstr ""
 
-#: /app/Models/Campaign.php:117
+#: /app/Models/Campaign.php:118
 msgid "Trigger Settings"
 msgstr ""
 
-#: /app/Models/Campaign.php:186
+#: /app/Models/Campaign.php:187
 msgid "Sending..."
 msgstr ""
 
-#: /app/Models/Campaign.php:224
+#: /app/Models/Campaign.php:225
 msgid "WordPress blog"
 msgstr ""
 
-#: /app/Models/Campaign.php:225
+#: /app/Models/Campaign.php:226
 msgid "LinkedIn"
 msgstr ""
 
-#: /app/Models/Campaign.php:226
+#: /app/Models/Campaign.php:227
 msgid "Facebook"
 msgstr ""
 
-#: /app/Models/Campaign.php:227
+#: /app/Models/Campaign.php:228
 msgid "Instagram"
 msgstr ""
 
-#: /app/Models/Campaign.php:228
+#: /app/Models/Campaign.php:229
 msgid "X"
 msgstr ""
 

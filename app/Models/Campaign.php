@@ -37,17 +37,7 @@ class Campaign extends Model
      *
      * @var array
      */
-    protected $registry_labels = [
-        'name' => 'Campaigns',
-        'singular_name' => 'Campaign',
-        'add_new' => 'Add New',
-        'add_new_item' => 'Add New Campaign',
-        'edit_item' => 'Edit Campaign',
-        'new_item' => 'New Campaign',
-        'view_item' => 'View Campaign',
-        'search_items' => 'Search Campaigns',
-        'not_found' => 'No campaigns found',
-    ];
+    protected $registry_labels = [];
     /**
      * Supports.
      *
@@ -59,6 +49,17 @@ class Campaign extends Model
      */
     protected function init()
     {
+        $this->registry_labels = [
+            'name' => __( 'Campaigns', 'n8n-marketing-trigger' ),
+            'singular_name' => __( 'Campaign', 'n8n-marketing-trigger' ),
+            'add_new' => __( 'Add New', 'n8n-marketing-trigger' ),
+            'add_new_item' => __( 'Add New Campaign', 'n8n-marketing-trigger' ),
+            'edit_item' => __( 'Edit Campaign', 'n8n-marketing-trigger' ),
+            'new_item' => __( 'New Campaign', 'n8n-marketing-trigger' ),
+            'view_item' => __( 'View Campaign', 'n8n-marketing-trigger' ),
+            'search_items' => __( 'Search Campaigns', 'n8n-marketing-trigger' ),
+            'not_found' => __( 'No campaigns found', 'n8n-marketing-trigger' ),
+        ];
         $this->metaboxes = [
             'campaign_settings' => [
                 'title' => __( 'Campaign Settings', 'n8n-marketing-trigger' ),
