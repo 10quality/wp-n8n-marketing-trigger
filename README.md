@@ -1,13 +1,24 @@
 # n8n Marketing Trigger - WordPress Plugin
 
 Built using the [WordPress MVC](https://10quality.github.io/wpmvc/) (WPMVC) framework.
+This plugin helps teams orchestrate AI-assisted marketing campaign workflows with n8n directly from WordPress.
+You define campaign content in WordPress, then trigger n8n webhooks so your automations can receive structured campaign data and continue execution.
+
+## Purpose
+
+n8n Marketing Trigger connects WordPress campaign authoring with n8n workflow automation.
+It gives editors a dedicated campaign workspace in wp-admin and sends campaign payloads to n8n webhook endpoints, allowing downstream workflow steps such as content processing, AI generation, and multi-platform publishing flows.
 
 ## Features
 
-- Settings page under `Settings > Marketing Trigger Settings`.
-- Campaign custom post type (`marketing_campaign`) with campaign and trigger metaboxes.
-- Webhook sending via Guzzle to test and production URLs using AJAX from campaign editor.
-- Payload preview tab with JSON payload example.
+- Settings page under `Settings > Marketing campaigns`.
+- Campaign custom post type (`marketing_campaign`) with localized admin labels.
+- Campaign metaboxes for platforms, cover image options, and trigger actions.
+- Trigger buttons for test and production sends from the campaign editor.
+- AJAX-based webhook delivery to n8n endpoints using structured JSON payloads.
+- Inline trigger feedback in the editor with upstream webhook error details.
+- Payload preview tab with example JSON structure.
+- Spanish localization catalogs for WordPress Spanish locale variants.
 
 ## Install
 
