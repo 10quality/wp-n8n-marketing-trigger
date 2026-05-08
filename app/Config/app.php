@@ -4,88 +4,52 @@
  * App configuration file.
  */
 return [
-
     'namespace' => 'N8nMarketingTrigger',
-
     'type' => 'plugin',
-
     'version' => '1.0.0',
-
     'author' => '10 Quality Studio <https://10quality.studio>',
-
     'license' => 'MIT',
-
     'autoenqueue' => [
-
-        // Enables or disables auto-enqueue of assets
-        'enabled'       => true,
-        // Enqueue priority
-        'priority'      => 10,
-        // Assets to auto-enqueue or auto-register
-        'assets'        => [
-            [
-                'asset'     => 'css/app.css',
-                'dep'       => [],
-                'footer'    => false,
-            ],
-            [
-                'asset'     => 'js/app.js',
-                'dep'       => [],
-                'footer'    => true,
-            ],
-        ],
-
+        'enabled' => false,
+        'priority' => 10,
+        'assets' => [],
     ],
-
     'localize' => [
-
-        // Enables or disables localization
-        'enabled'       => false,
-        // Default path for language files
-        'path'          => __DIR__ . '/../../assets/lang/',
-        // Text domain
+        'enabled' => false,
+        'path' => __DIR__ . '/../../assets/lang/',
         'textdomain' => 'n8n-marketing-trigger',
-        // Unload loaded locale files before localization
-        'unload'        => false,
-        // Flag that indicates if this is a WordPress.org plugin/theme
-        'is_public'     => false,
-
+        'unload' => false,
+        'is_public' => false,
     ],
-
     'paths' => [
-
-        'base'          => __DIR__ . '/../',
-        'controllers'   => __DIR__ . '/../Controllers/',
-        'views'         => __DIR__ . '/../../assets/views/',
-        'lang'          => __DIR__ . '/../../assets/lang/',
-        'log'           => WP_CONTENT_DIR . '/wpmvc/log',
-
+        'base' => __DIR__ . '/../',
+        'controllers' => __DIR__ . '/../Controllers/',
+        'views' => __DIR__ . '/../../assets/views/',
+        'lang' => __DIR__ . '/../../assets/lang/',
+        'log' => WP_CONTENT_DIR . '/wpmvc/log',
     ],
-
     'cache' => [
-
-        // Enables or disables cache
-        'enabled'       => true,
-        // files, auto (files), apc, wincache, xcache, memcache, memcached
-        'storage'       => 'auto',
-        // Default path for files
-        'path'          => WP_CONTENT_DIR . '/wpmvc/cache',
-        // It will create a path by PATH/securityKey
-        'securityKey'   => '',
-        // FallBack Driver
-        'fallback'      => [
-            'memcache'  =>  'files',
-            'apc'       =>  'sqlite',
+        'enabled' => true,
+        'storage' => 'auto',
+        'path' => WP_CONTENT_DIR . '/wpmvc/cache',
+        'securityKey' => '',
+        'fallback' => [
+            'memcache' => 'files',
+            'apc' => 'sqlite',
         ],
-        // .htaccess protect
-        'htaccess'      => true,
-        // Default Memcache Server
-        'server'        => [
+        'htaccess' => true,
+        'server' => [
             [ '127.0.0.1', 11211, 1 ],
         ],
-
     ],
-
-    'addons' => [],
-
+    'addons' => [
+        'WPMVC\\Addons\\Administrator\\AdministratorAddon',
+        'WPMVC\\Addons\\Metaboxer\\MetaboxerAddon',
+    ],
+    'administrator_models' => [
+        'n8n_mt_settings' => 'N8nMarketingTrigger\Models\Settings',
+    ],
+    'metaboxer_models' => [
+        'marketing_campaign' => 'N8nMarketingTrigger\Models\Campaign',
+    ],
 ];

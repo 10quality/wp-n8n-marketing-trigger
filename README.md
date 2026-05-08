@@ -2,6 +2,13 @@
 
 Built using the [WordPress MVC](https://10quality.github.io/wpmvc/) (WPMVC) framework.
 
+## Features
+
+- Settings page under `Settings > Marketing Trigger Settings`.
+- Campaign custom post type (`marketing_campaign`) with campaign and trigger metaboxes.
+- Webhook sending via Guzzle to test and production URLs.
+- Payload preview tab with JSON payload example.
+
 ## Install
 
 Download composer dependencies:
@@ -25,22 +32,25 @@ npm install -g gulp-cli
 Run setup wizard:
 
 ```bash
-php ayuco setup
+php ayuco setup --nopretty
 ```
 
-## Update The Framework
+## Test Guide
 
-Update composer dependencies:
+PHPUnit is configured through `phpunit.xml` and `tests/bootstrap.php`.
+
+In this project, tests are expected to run inside the WordPress Docker container:
 
 ```bash
-composer update --no-plugins
+docker ps
+docker exec -it 10quality-wordpress-1 bash
+cd wp-content/plugins/n8n-marketing-trigger
+./vendor/bin/phpunit
 ```
 
-Update npm/node dependencies:
+## Docs
 
-```bash
-npm update
-```
+See [docs/marketing-trigger-guide.md](docs/marketing-trigger-guide.md) for full behavior and acceptance mapping.
 
 ## License
 
