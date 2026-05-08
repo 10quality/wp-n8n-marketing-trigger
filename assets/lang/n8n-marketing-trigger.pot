@@ -4,25 +4,25 @@ msgstr ""
 "Language: en\n"
 "Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
 "MIME-Version: 1.0.0\n"
-"POT-Creation-Date: 2026-05-08 16:23:03\n"
+"POT-Creation-Date: 2026-05-08 17:22:33\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Project-Id-Version: N8nMarketingTrigger\n"
 "X-Domain: n8n-marketing-trigger\n"
 "X-Generator: WordPress MVC Commands 1.1\n"
 
 #: /app/Controllers/AdminController.php:24
-#: /app/Controllers/CampaignController.php:115
+#: /app/Controllers/CampaignController.php:155
 msgid "Test campaign sent successfully"
 msgstr ""
 
 #: /app/Controllers/AdminController.php:26
-#: /app/Controllers/CampaignController.php:116
+#: /app/Controllers/CampaignController.php:156
 msgid "Campaign sent successfully"
 msgstr ""
 
 #: /app/Controllers/AdminController.php:28
 #: /app/Controllers/CampaignController.php:65
-#: /app/Models/Campaign.php:188
+#: /app/Models/Campaign.php:225
 msgid "Unable to send campaign. Please verify your URL settings and try again."
 msgstr ""
 
@@ -47,16 +47,16 @@ msgstr ""
 msgid "Missing target URL in settings."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:147
+#: /app/Controllers/CampaignController.php:187
 msgid "Unable to reach webhook endpoint."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:156
+#: /app/Controllers/CampaignController.php:196
 #, php-format
 msgid "Webhook error (%1$d): %2$s"
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:164
+#: /app/Controllers/CampaignController.php:204
 #, php-format
 msgid "Webhook request failed with status %d."
 msgstr ""
@@ -133,31 +133,51 @@ msgstr ""
 msgid "If enabled, additional images will be generated for this campaign using AI. The images will be based on the campaign title and body content."
 msgstr ""
 
-#: /app/Models/Campaign.php:118
+#: /app/Models/Campaign.php:115
+msgid "Campaign goal"
+msgstr ""
+
+#: /app/Models/Campaign.php:123
+msgid "Target audience"
+msgstr ""
+
+#: /app/Models/Campaign.php:131
+msgid "Call to action"
+msgstr ""
+
+#: /app/Models/Campaign.php:138
+msgid "Select pages..."
+msgstr ""
+
+#: /app/Models/Campaign.php:144
+msgid "Alternative call to action"
+msgstr ""
+
+#: /app/Models/Campaign.php:155
 msgid "Trigger Settings"
 msgstr ""
 
-#: /app/Models/Campaign.php:187
+#: /app/Models/Campaign.php:224
 msgid "Sending..."
 msgstr ""
 
-#: /app/Models/Campaign.php:225
+#: /app/Models/Campaign.php:262
 msgid "WordPress blog"
 msgstr ""
 
-#: /app/Models/Campaign.php:226
+#: /app/Models/Campaign.php:263
 msgid "LinkedIn"
 msgstr ""
 
-#: /app/Models/Campaign.php:227
+#: /app/Models/Campaign.php:264
 msgid "Facebook"
 msgstr ""
 
-#: /app/Models/Campaign.php:228
+#: /app/Models/Campaign.php:265
 msgid "Instagram"
 msgstr ""
 
-#: /app/Models/Campaign.php:229
+#: /app/Models/Campaign.php:266
 msgid "X"
 msgstr ""
 
@@ -187,6 +207,26 @@ msgid "Production URL"
 msgstr ""
 
 #: /app/Models/Settings.php:76
+msgid "Business"
+msgstr ""
+
+#: /app/Models/Settings.php:80
+msgid "Business name"
+msgstr ""
+
+#: /app/Models/Settings.php:89
+msgid "Phone number"
+msgstr ""
+
+#: /app/Models/Settings.php:98
+msgid "Email"
+msgstr ""
+
+#: /app/Models/Settings.php:107
+msgid "What we do"
+msgstr ""
+
+#: /app/Models/Settings.php:119
 msgid "Payload"
 msgstr ""
 

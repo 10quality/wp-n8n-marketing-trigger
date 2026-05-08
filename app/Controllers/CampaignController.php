@@ -75,8 +75,10 @@ class CampaignController
     protected function build_payload( Campaign $campaign )
     {
         $platforms = is_array( $campaign->platforms ) ? $campaign->platforms : [];
+        $settings = n8n_mt_settings();
         return [
             'send_at' => gmdate( 'c' ),
+            'url' => home_url(),
             'campaign_id' => (int) $campaign->ID,
             'title' => (string) $campaign->post_title,
             'instructions' => (string) $campaign->post_content,
@@ -85,8 +87,46 @@ class CampaignController
                 'with_cover_image' => (bool) $campaign->with_cover_image,
                 'cover_image_instructions' => (string) $campaign->cover_image_instructions,
                 'additional_images' => (bool) $campaign->additional_images,
+                'goal' => (string) $campaign->goal,
+                'target_audience' => (string) $campaign->target_audience,
+                'call_to_action' => $this->resolve_call_to_action( $campaign->call_to_action ),
+                'alternative_call_to_action' => (string) $campaign->alternative_call_to_action,
+            ],
+            'business' => [
+                'name' => (string) $settings->business_name,
+                'phone' => (string) $settings->business_phone,
+                'email' => (string) $settings->business_email,
+                'description' => (string) $settings->business_description,
             ],
         ];
+    }
+    /**
+     * Resolves selected call-to-action page IDs into payload objects.
+     *
+     * @param mixed $selected
+     *
+     * @return array
+     */
+    protected function resolve_call_to_action( $selected )
+    {
+        $ids = is_array( $selected ) ? $selected : [];
+        $calls_to_action = [];
+        foreach ( $ids as $id ) {
+            $page_id = (int) $id;
+            if ( $page_id <= 0 ) {
+                continue;
+            }
+            $page = get_post( $page_id );
+            if ( ! $page || $page->post_type !== 'page' ) {
+                continue;
+            }
+            $calls_to_action[] = [
+                'id' => $page_id,
+                'title' => (string) $page->post_title,
+                'url' => get_permalink( $page_id ),
+            ];
+        }
+        return $calls_to_action;
     }
     /**
      * Redirects with admin notice flag.

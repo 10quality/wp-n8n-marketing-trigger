@@ -27,8 +27,13 @@ class SettingsTest extends WP_UnitTestCase
     {
         $settings = n8n_mt_settings();
         $this->assertArrayHasKey( 'webhooks', $settings->tabs );
+        $this->assertArrayHasKey( 'business', $settings->tabs );
         $this->assertArrayHasKey( 'payload', $settings->tabs );
         $this->assertArrayHasKey( 'method', $settings->tabs['webhooks']['fields'] );
+        $this->assertArrayHasKey( 'business_name', $settings->tabs['business']['fields'] );
+        $this->assertArrayHasKey( 'business_phone', $settings->tabs['business']['fields'] );
+        $this->assertArrayHasKey( 'business_email', $settings->tabs['business']['fields'] );
+        $this->assertArrayHasKey( 'business_description', $settings->tabs['business']['fields'] );
         $this->assertSame( 'POST', $settings->tabs['webhooks']['fields']['method']['default'] );
         $this->assertSame( 'Settings saved successfully', $settings->save_message );
     }
@@ -44,5 +49,7 @@ class SettingsTest extends WP_UnitTestCase
         $this->assertStringContainsString( '<pre ', $html );
         $this->assertStringContainsString( 'campaign_id', $html );
         $this->assertStringContainsString( 'settings', $html );
+        $this->assertStringContainsString( 'call_to_action', $html );
+        $this->assertStringContainsString( 'business', $html );
     }
 }

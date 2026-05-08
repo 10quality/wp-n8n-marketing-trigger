@@ -5,8 +5,8 @@ msgstr ""
 "Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
 "MIME-Version: 1.0.0\n"
 "PO-Creation-Date: 2026-05-08 16:17:06\n"
-"PO-Update-Date: 2026-05-08 16:23:05\n"
-"POT-Creation-Date: 2026-05-08 16:23:03\n"
+"PO-Update-Date: 2026-05-08 17:22:34\n"
+"POT-Creation-Date: 2026-05-08 17:22:33\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Project-Id-Version: N8nMarketingTrigger\n"
 "X-Domain: n8n-marketing-trigger\n"
@@ -14,11 +14,13 @@ msgstr ""
 
 #: /app/Controllers/AdminController.php:24
 #: /app/Controllers/CampaignController.php:115
+#: /app/Controllers/CampaignController.php:155
 msgid "Test campaign sent successfully"
 msgstr "Campaña de prueba enviada correctamente"
 
 #: /app/Controllers/AdminController.php:26
 #: /app/Controllers/CampaignController.php:116
+#: /app/Controllers/CampaignController.php:156
 msgid "Campaign sent successfully"
 msgstr "Campaña enviada correctamente"
 
@@ -26,6 +28,7 @@ msgstr "Campaña enviada correctamente"
 #: /app/Controllers/CampaignController.php:65
 #: /app/Models/Campaign.php:187
 #: /app/Models/Campaign.php:188
+#: /app/Models/Campaign.php:225
 msgid "Unable to send campaign. Please verify your URL settings and try again."
 msgstr "No se pudo enviar la campaña. Verifica la configuración de URL e inténtalo de nuevo."
 
@@ -51,15 +54,18 @@ msgid "Missing target URL in settings."
 msgstr "Falta la URL de destino en la configuración."
 
 #: /app/Controllers/CampaignController.php:147
+#: /app/Controllers/CampaignController.php:187
 msgid "Unable to reach webhook endpoint."
 msgstr "No se pudo conectar con el endpoint del webhook."
 
 #: /app/Controllers/CampaignController.php:156
+#: /app/Controllers/CampaignController.php:196
 #, php-format
 msgid "Webhook error (%1$d): %2$s"
 msgstr "Error del webhook (%1$d): %2$s"
 
 #: /app/Controllers/CampaignController.php:164
+#: /app/Controllers/CampaignController.php:204
 #, php-format
 msgid "Webhook request failed with status %d."
 msgstr "La solicitud al webhook falló con estado %d."
@@ -111,36 +117,43 @@ msgstr "Si se activa, se generarán imágenes adicionales para esta campaña usa
 
 #: /app/Models/Campaign.php:117
 #: /app/Models/Campaign.php:118
+#: /app/Models/Campaign.php:155
 msgid "Trigger Settings"
 msgstr "Configuración de disparador"
 
 #: /app/Models/Campaign.php:186
 #: /app/Models/Campaign.php:187
+#: /app/Models/Campaign.php:224
 msgid "Sending..."
 msgstr "Enviando..."
 
 #: /app/Models/Campaign.php:224
 #: /app/Models/Campaign.php:225
+#: /app/Models/Campaign.php:262
 msgid "WordPress blog"
 msgstr "Blog de WordPress"
 
 #: /app/Models/Campaign.php:225
 #: /app/Models/Campaign.php:226
+#: /app/Models/Campaign.php:263
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: /app/Models/Campaign.php:226
 #: /app/Models/Campaign.php:227
+#: /app/Models/Campaign.php:264
 msgid "Facebook"
 msgstr "Facebook"
 
 #: /app/Models/Campaign.php:227
 #: /app/Models/Campaign.php:228
+#: /app/Models/Campaign.php:265
 msgid "Instagram"
 msgstr "Instagram"
 
 #: /app/Models/Campaign.php:228
 #: /app/Models/Campaign.php:229
+#: /app/Models/Campaign.php:266
 msgid "X"
 msgstr "X"
 
@@ -170,6 +183,7 @@ msgid "Production URL"
 msgstr "URL de producción"
 
 #: /app/Models/Settings.php:76
+#: /app/Models/Settings.php:119
 msgid "Payload"
 msgstr "Carga útil"
 
@@ -224,3 +238,43 @@ msgstr "Buscar campañas"
 #: /app/Models/Campaign.php:61
 msgid "No campaigns found"
 msgstr "No se encontraron campañas"
+
+#: /app/Models/Campaign.php:115
+msgid "Campaign goal"
+msgstr "Objetivo de la campaña"
+
+#: /app/Models/Campaign.php:123
+msgid "Target audience"
+msgstr "Público objetivo"
+
+#: /app/Models/Campaign.php:131
+msgid "Call to action"
+msgstr "Llamado a la acción"
+
+#: /app/Models/Campaign.php:138
+msgid "Select pages..."
+msgstr "Selecciona páginas..."
+
+#: /app/Models/Campaign.php:144
+msgid "Alternative call to action"
+msgstr "Llamado a la acción alternativo"
+
+#: /app/Models/Settings.php:76
+msgid "Business"
+msgstr "Negocio"
+
+#: /app/Models/Settings.php:80
+msgid "Business name"
+msgstr "Nombre del negocio"
+
+#: /app/Models/Settings.php:89
+msgid "Phone number"
+msgstr "Número de teléfono"
+
+#: /app/Models/Settings.php:98
+msgid "Email"
+msgstr ""
+
+#: /app/Models/Settings.php:107
+msgid "What we do"
+msgstr "Qué hacemos"

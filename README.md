@@ -14,6 +14,8 @@ It gives editors a dedicated campaign workspace in wp-admin and sends campaign p
 - Settings page under `Settings > Marketing campaigns`.
 - Campaign custom post type (`marketing_campaign`) with localized admin labels.
 - Campaign metaboxes for platforms, cover image options, and trigger actions.
+- Business settings tab for company profile data used in webhook payloads.
+- Campaign strategy fields for goal, target audience, call to action pages, and alternative call to action.
 - Trigger buttons for test and production sends from the campaign editor.
 - AJAX-based webhook delivery to n8n endpoints using structured JSON payloads.
 - Inline trigger feedback in the editor with upstream webhook error details.

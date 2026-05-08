@@ -9,6 +9,7 @@ Menu location:
 Tabs:
 
 - `Webhooks`
+- `Business`
 - `Payload`
 
 `Webhooks` fields:
@@ -23,6 +24,13 @@ Tabs:
 
 - Section `Example`
 - JSON `<pre>` payload structure matching trigger payload.
+
+`Business` fields:
+
+- `Business name`
+- `Phone number`
+- `Email`
+- `What we do`
 
 ## Campaign Post Type
 
@@ -47,6 +55,10 @@ Editor behavior:
 - `With cover image` (switch)
 - `Cover image instructions` (textarea, visible only when `With cover image` is enabled)
 - `Additional images` (switch, visible only when `With cover image` is enabled)
+- `Campaign goal` (text)
+- `Target audience` (text)
+- `Call to action` (multi select2 with WordPress pages)
+- `Alternative call to action` (text)
 
 Platform values are sanitized and stored as slug strings.
 
@@ -76,7 +88,23 @@ Payload format:
         "platforms": ["wordpress-blog", "linkedin"],
         "with_cover_image": true,
         "cover_image_instructions": "Generate a cover image with a blue background and the campaign title in white text.",
-        "additional_images": false
+        "additional_images": false,
+        "goal": "Campaign goal",
+        "target_audience": "Campaign target audience",
+        "call_to_action": [
+            {
+                "id": 456,
+                "title": "Call to action page title",
+                "url": "https://example.com/call-to-action-page"
+            }
+        ],
+        "alternative_call_to_action": "Alternative call to action"
+    },
+    "business": {
+        "name": "Business name",
+        "phone": "123-456-7890",
+        "email": "example@example.com",
+        "description": "Brief description of what the business does."
     }
 }
 ```

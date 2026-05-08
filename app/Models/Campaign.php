@@ -110,6 +110,43 @@ class Campaign extends Model
                                     'with_cover_image' => 1,
                                 ],
                             ],
+                            'goal' => [
+                                'type' => 'input',
+                                'title' => __( 'Campaign goal', 'n8n-marketing-trigger' ),
+                                'control' => [
+                                    'type' => 'text',
+                                    'wide' => true,
+                                ],
+                            ],
+                            'target_audience' => [
+                                'type' => 'input',
+                                'title' => __( 'Target audience', 'n8n-marketing-trigger' ),
+                                'control' => [
+                                    'type' => 'text',
+                                    'wide' => true,
+                                ],
+                            ],
+                            'call_to_action' => [
+                                'type' => 'select2',
+                                'title' => __( 'Call to action', 'n8n-marketing-trigger' ),
+                                'options' => self::call_to_action_options(),
+                                'control' => [
+                                    'wide' => true,
+                                    'attributes' => [
+                                        'multiple' => true,
+                                        'data-allow-clear' => 1,
+                                        'placeholder' => __( 'Select pages...', 'n8n-marketing-trigger' ),
+                                    ],
+                                ],
+                            ],
+                            'alternative_call_to_action' => [
+                                'type' => 'input',
+                                'title' => __( 'Alternative call to action', 'n8n-marketing-trigger' ),
+                                'control' => [
+                                    'type' => 'text',
+                                    'wide' => true,
+                                ],
+                            ],
                         ],
                     ],
                 ],
@@ -228,5 +265,25 @@ class Campaign extends Model
             'instagram' => __( 'Instagram', 'n8n-marketing-trigger' ),
             'x' => __( 'X', 'n8n-marketing-trigger' ),
         ];
+    }
+    /**
+     * Call-to-action options based on WordPress pages.
+     *
+     * @return array
+     */
+    public static function call_to_action_options()
+    {
+        $options = [];
+        $pages = get_pages(
+            [
+                'post_status' => 'publish',
+                'sort_column' => 'post_title',
+                'sort_order' => 'ASC',
+            ]
+        );
+        foreach ( $pages as $page ) {
+            $options[(string) $page->ID] = $page->post_title;
+        }
+        return $options;
     }
 }

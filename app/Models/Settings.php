@@ -72,6 +72,49 @@ class Settings extends Model
                     ],
                 ],
             ],
+            'business' => [
+                'title' => __( 'Business', 'n8n-marketing-trigger' ),
+                'fields' => [
+                    'business_name' => [
+                        'type' => 'input',
+                        'title' => __( 'Business name', 'n8n-marketing-trigger' ),
+                        'default' => '',
+                        'control' => [
+                            'type' => 'text',
+                            'wide' => true,
+                        ],
+                    ],
+                    'business_phone' => [
+                        'type' => 'input',
+                        'title' => __( 'Phone number', 'n8n-marketing-trigger' ),
+                        'default' => '',
+                        'control' => [
+                            'type' => 'text',
+                            'wide' => true,
+                        ],
+                    ],
+                    'business_email' => [
+                        'type' => 'input',
+                        'title' => __( 'Email', 'n8n-marketing-trigger' ),
+                        'default' => '',
+                        'control' => [
+                            'type' => 'email',
+                            'wide' => true,
+                        ],
+                    ],
+                    'business_description' => [
+                        'type' => 'textarea',
+                        'title' => __( 'What we do', 'n8n-marketing-trigger' ),
+                        'default' => '',
+                        'control' => [
+                            'wide' => true,
+                            'attributes' => [
+                                'rows' => 4,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
             'payload' => [
                 'title' => __( 'Payload', 'n8n-marketing-trigger' ),
                 'submit' => false,
@@ -95,6 +138,7 @@ class Settings extends Model
     {
         $payload = [
             'send_at' => '2024-01-01T12:00:00Z',
+            'url' => 'https://example.com',
             'campaign_id' => 123,
             'title' => 'Campaign title',
             'instructions' => 'Campaign body',
@@ -103,6 +147,22 @@ class Settings extends Model
                 'with_cover_image' => true,
                 'cover_image_instructions' => 'Generate a cover image with a blue background and the campaign title in white text.',
                 'additional_images' => false,
+                'goal' => 'Campaign goal',
+                'target_audience' => 'Campaign target audience',
+                'call_to_action' => [
+                    [
+                        'id' => 456,
+                        'title' => 'Call to action page title',
+                        'url' => 'https://example.com/call-to-action-page',
+                    ],
+                ],
+                'alternative_call_to_action' => 'Alternative call to action',
+            ],
+            'business' => [
+                'name' => 'Business name',
+                'phone' => '123-456-7890',
+                'email' => 'example@example.com',
+                'description' => 'Brief description of what the business does.',
             ],
         ];
         n8n_mt()->view(
