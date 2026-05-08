@@ -54,6 +54,8 @@ Platform values are sanitized and stored as slug strings.
 
 - `Send test` button
 - `Send` button
+- Both buttons send requests via WordPress AJAX (`admin-ajax.php`), not form posts.
+- Trigger responses are shown inline in the metabox feedback area.
 
 Button disable rules:
 

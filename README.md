@@ -6,7 +6,7 @@ Built using the [WordPress MVC](https://10quality.github.io/wpmvc/) (WPMVC) fram
 
 - Settings page under `Settings > Marketing Trigger Settings`.
 - Campaign custom post type (`marketing_campaign`) with campaign and trigger metaboxes.
-- Webhook sending via Guzzle to test and production URLs.
+- Webhook sending via Guzzle to test and production URLs using AJAX from campaign editor.
 - Payload preview tab with JSON payload example.
 
 ## Install

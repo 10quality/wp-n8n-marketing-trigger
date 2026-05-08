@@ -33,4 +33,18 @@ class CallbackSignatureTest extends WP_UnitTestCase
         $html = ob_get_clean();
         $this->assertStringContainsString( 'Save this campaign before sending triggers.', $html );
     }
+    /**
+     * Campaign callback should render ajax trigger buttons for assigned campaign.
+     */
+    public function test_campaign_trigger_callback_renders_ajax_buttons_for_saved_campaign()
+    {
+        $campaign = new Campaign;
+        $campaign->ID = 169;
+        ob_start();
+        $campaign->render_trigger_buttons( $campaign, 'trigger_buttons' );
+        $html = ob_get_clean();
+        $this->assertStringContainsString( 'n8n-mt-trigger-button', $html );
+        $this->assertStringContainsString( 'data-mode="test"', $html );
+        $this->assertStringContainsString( 'data-mode="production"', $html );
+    }
 }

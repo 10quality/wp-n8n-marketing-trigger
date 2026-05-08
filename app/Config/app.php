@@ -10,9 +10,18 @@ return [
     'author' => '10 Quality Studio <https://10quality.studio>',
     'license' => 'MIT',
     'autoenqueue' => [
-        'enabled' => false,
+        'enabled' => true,
         'priority' => 10,
-        'assets' => [],
+        'assets' => [
+            [
+                'id' => 'n8n-mt-campaign-trigger',
+                'asset' => 'js/app.js',
+                'enqueue' => false,
+                'dep' => [ 'jquery' ],
+                'footer' => true,
+                'is_admin' => true,
+            ],
+        ],
     ],
     'localize' => [
         'enabled' => false,

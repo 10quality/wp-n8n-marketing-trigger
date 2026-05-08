@@ -169,6 +169,29 @@ class Campaign extends Model
             '1.0.5',
             true
         );
+        if ( ! $this->ID ) {
+            return;
+        }
+        wp_enqueue_script(
+            'n8n-mt-campaign-trigger'
+        );
+        wp_localize_script(
+            'n8n-mt-campaign-trigger',
+            'n8nMtCampaignTrigger',
+            [
+                'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+                'nonce' => wp_create_nonce( 'n8n_mt_send_campaign' ),
+                'campaignId' => (int) $this->ID,
+                'messages' => [
+                    'sending' => __( 'Sending...', 'n8n-marketing-trigger' ),
+                    'genericError' => __( 'Unable to send campaign. Please verify your URL settings and try again.', 'n8n-marketing-trigger' ),
+                ],
+                'actions' => [
+                    'test' => 'n8n_mt_send_test',
+                    'production' => 'n8n_mt_send_campaign',
+                ],
+            ]
+        );
     }
     /**
      * Render trigger buttons.
@@ -181,11 +204,10 @@ class Campaign extends Model
         $settings = n8n_mt_settings();
         $has_test = trim( (string) $settings->test_url ) !== '';
         $has_production = trim( (string) $settings->production_url ) !== '';
-        $post_id = isset( $model->ID ) ? (int) $model->ID : 0;
         n8n_mt()->view(
             'campaign.trigger-buttons',
             [
-                'post_id' => $post_id,
+                'post_id' => $model->ID,
                 'has_test' => $has_test,
                 'has_production' => $has_production,
             ]
