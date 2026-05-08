@@ -1,0 +1,14 @@
+{
+  "name": "n8n-marketing-trigger",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "dev": "gulp dev",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "@10quality/gulp-wpmvc": "1.4.0",
+    "gulp": "4.0.2"
+  }
+}
