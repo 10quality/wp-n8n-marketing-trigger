@@ -6,7 +6,7 @@
 return [
     'namespace' => 'N8nMarketingTrigger',
     'type' => 'plugin',
-    'version' => '1.0.1',
+    'version' => '1.0.2',
     'author' => '10 Quality Studio <https://10quality.studio>',
     'license' => 'MIT',
     'autoenqueue' => [
