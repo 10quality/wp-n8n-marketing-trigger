@@ -21,6 +21,11 @@
             return;
         }
         var cfg = n8nMtCampaignTrigger;
+        if ($.fn.datetimepicker && cfg.schedule && typeof cfg.schedule.minDate !== 'undefined') {
+            $('input.datetimepicker[data-n8n-mt-min-now="1"]').datetimepicker({
+                minDate: cfg.schedule.minDate
+            });
+        }
         var $buttons = $('.n8n-mt-trigger-button');
         $buttons.on('click', function(){
             var mode = $(this).data('mode');

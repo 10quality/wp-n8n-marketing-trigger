@@ -64,10 +64,19 @@ Platform values are sanitized and stored as slug strings.
 
 ### Trigger Settings
 
+- Two tabs:
+- `Manual`
+- `Scheduled`
+- Manual tab:
 - `Send test` button
 - `Send` button
 - Both buttons send requests via WordPress AJAX (`admin-ajax.php`), not form posts.
 - Trigger responses are shown inline in the metabox feedback area.
+- Scheduled tab:
+- `Enabled` switch
+- `Date and Time` datetime picker
+- `Timezone` dropdown
+- `Webhook` choose control (`Prod` or `Test`)
 
 Button disable rules:
 
@@ -113,6 +122,13 @@ Trigger success notices:
 
 - `Test campaign sent successfully`
 - `Campaign sent successfully`
+
+## Scheduled Triggers
+
+- Saving a campaign with scheduled trigger enabled creates a WP-Cron single event.
+- Scheduled events execute at the selected datetime in the selected timezone.
+- The selected webhook mode (`Prod`/`Test`) determines which endpoint URL is used.
+- Scheduled run attempts are logged through WPMVC logger.
 
 ## Testing
 

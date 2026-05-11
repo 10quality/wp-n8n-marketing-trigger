@@ -3,26 +3,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en\n"
 "Last-Translator: 10 Quality Studio <https://10quality.studio>\n"
-"MIME-Version: 1.0.0\n"
-"POT-Creation-Date: 2026-05-08 17:22:33\n"
+"MIME-Version: 1.0.1\n"
+"POT-Creation-Date: 2026-05-11 00:19:44\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Project-Id-Version: N8nMarketingTrigger\n"
 "X-Domain: n8n-marketing-trigger\n"
 "X-Generator: WordPress MVC Commands 1.1\n"
 
 #: /app/Controllers/AdminController.php:24
-#: /app/Controllers/CampaignController.php:155
+#: /app/Controllers/CampaignController.php:271
 msgid "Test campaign sent successfully"
 msgstr ""
 
 #: /app/Controllers/AdminController.php:26
-#: /app/Controllers/CampaignController.php:156
+#: /app/Controllers/CampaignController.php:272
 msgid "Campaign sent successfully"
 msgstr ""
 
 #: /app/Controllers/AdminController.php:28
-#: /app/Controllers/CampaignController.php:65
-#: /app/Models/Campaign.php:225
+#: /app/Controllers/CampaignController.php:66
+#: /app/Models/Campaign.php:241
 msgid "Unable to send campaign. Please verify your URL settings and try again."
 msgstr ""
 
@@ -35,28 +35,28 @@ msgstr ""
 msgid "Campaign saved successfully"
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:40
+#: /app/Controllers/CampaignController.php:47
 msgid "You do not have permission to perform this action."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:46
+#: /app/Controllers/CampaignController.php:53
 msgid "Campaign was not found."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:51
+#: /app/Controllers/CampaignController.php:58
 msgid "Missing target URL in settings."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:187
+#: /app/Controllers/CampaignController.php:303
 msgid "Unable to reach webhook endpoint."
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:196
+#: /app/Controllers/CampaignController.php:312
 #, php-format
 msgid "Webhook error (%1$d): %2$s"
 msgstr ""
 
-#: /app/Controllers/CampaignController.php:204
+#: /app/Controllers/CampaignController.php:320
 #, php-format
 msgid "Webhook request failed with status %d."
 msgstr ""
@@ -157,27 +157,59 @@ msgstr ""
 msgid "Trigger Settings"
 msgstr ""
 
-#: /app/Models/Campaign.php:224
+#: /app/Models/Campaign.php:160
+msgid "Manual"
+msgstr ""
+
+#: /app/Models/Campaign.php:169
+msgid "Scheduled"
+msgstr ""
+
+#: /app/Models/Campaign.php:173
+msgid "Enabled"
+msgstr ""
+
+#: /app/Models/Campaign.php:178
+msgid "Date and Time"
+msgstr ""
+
+#: /app/Models/Campaign.php:191
+msgid "Timezone"
+msgstr ""
+
+#: /app/Models/Campaign.php:202
+msgid "Webhook"
+msgstr ""
+
+#: /app/Models/Campaign.php:205
+msgid "Prod"
+msgstr ""
+
+#: /app/Models/Campaign.php:206
+msgid "Test"
+msgstr ""
+
+#: /app/Models/Campaign.php:240
 msgid "Sending..."
 msgstr ""
 
-#: /app/Models/Campaign.php:262
+#: /app/Models/Campaign.php:281
 msgid "WordPress blog"
 msgstr ""
 
-#: /app/Models/Campaign.php:263
+#: /app/Models/Campaign.php:282
 msgid "LinkedIn"
 msgstr ""
 
-#: /app/Models/Campaign.php:264
+#: /app/Models/Campaign.php:283
 msgid "Facebook"
 msgstr ""
 
-#: /app/Models/Campaign.php:265
+#: /app/Models/Campaign.php:284
 msgid "Instagram"
 msgstr ""
 
-#: /app/Models/Campaign.php:266
+#: /app/Models/Campaign.php:285
 msgid "X"
 msgstr ""
 

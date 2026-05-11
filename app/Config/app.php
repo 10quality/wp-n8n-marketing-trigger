@@ -54,6 +54,7 @@ return [
     'addons' => [
         'WPMVC\\Addons\\Administrator\\AdministratorAddon',
         'WPMVC\\Addons\\Metaboxer\\MetaboxerAddon',
+        'WPMVC\\Addons\\Status\\StatusAddon',
     ],
     'administrator_models' => [
         'n8n_mt_settings' => 'N8nMarketingTrigger\Models\Settings',

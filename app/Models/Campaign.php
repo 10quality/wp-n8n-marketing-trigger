@@ -156,11 +156,58 @@ class Campaign extends Model
                 'context' => 'side',
                 'priority' => 'high',
                 'tabs' => [
-                    self::NO_TAB => [
+                    'manual' => [
+                        'title' => __( 'Manual', 'n8n-marketing-trigger' ),
                         'fields' => [
                             'trigger_buttons' => [
                                 'type' => 'callback',
                                 'callback' => [ $this, 'render_trigger_buttons' ],
+                            ],
+                        ],
+                    ],
+                    'scheduled' => [
+                        'title' => __( 'Scheduled', 'n8n-marketing-trigger' ),
+                        'fields' => [
+                            'scheduled_enabled' => [
+                                'type' => 'switch',
+                                'title' => __( 'Enabled', 'n8n-marketing-trigger' ),
+                                'default' => false,
+                            ],
+                            'scheduled_datetime' => [
+                                'type' => 'datetimepicker',
+                                'title' => __( 'Date and Time', 'n8n-marketing-trigger' ),
+                                'show_if' => [
+                                    'scheduled_enabled' => 1,
+                                ],
+                                'control' => [
+                                    'wide' => true,
+                                    'attributes' => [
+                                        'data-n8n-mt-min-now' => 1,
+                                    ],
+                                ],
+                            ],
+                            'scheduled_timezone' => [
+                                'type' => 'select',
+                                'title' => __( 'Timezone', 'n8n-marketing-trigger' ),
+                                'options' => self::timezone_options(),
+                                'show_if' => [
+                                    'scheduled_enabled' => 1,
+                                ],
+                                'control' => [
+                                    'wide' => true,
+                                ],
+                            ],
+                            'scheduled_webhook' => [
+                                'type' => 'choose',
+                                'title' => __( 'Webhook', 'n8n-marketing-trigger' ),
+                                'default' => 'production',
+                                'options' => [
+                                    'production' => __( 'Prod', 'n8n-marketing-trigger' ),
+                                    'test' => __( 'Test', 'n8n-marketing-trigger' ),
+                                ],
+                                'show_if' => [
+                                    'scheduled_enabled' => 1,
+                                ],
                             ],
                         ],
                     ],
@@ -173,40 +220,9 @@ class Campaign extends Model
      */
     public function enqueue()
     {
-        $plugin_file = dirname( __DIR__, 2 ) . '/plugin.php';
-        wp_enqueue_style(
-            'n8n-mt-select2',
-            plugins_url( 'vendor/10quality/wpmvc-addon-resources/assets/css/select2.min.css', $plugin_file ),
-            [],
-            '4.0.13'
-        );
-        wp_enqueue_script(
-            'n8n-mt-select2',
-            plugins_url( 'vendor/10quality/wpmvc-addon-resources/assets/js/select2.min.js', $plugin_file ),
-            [ 'jquery' ],
-            '4.0.13',
-            true
-        );
-        wp_enqueue_style(
-            'n8n-mt-switch',
-            plugins_url( 'vendor/10quality/wpmvc-addon-resources/assets/css/switch.css', $plugin_file ),
-            [],
-            '1.0.4'
-        );
-        wp_enqueue_script(
-            'wpmvc-hideshow',
-            plugins_url( 'vendor/10quality/wpmvc-addon-resources/assets/js/jquery.hide-show.js', $plugin_file ),
-            [ 'jquery' ],
-            '1.0.0',
-            true
-        );
-        wp_enqueue_script(
-            'n8n-mt-switch',
-            plugins_url( 'vendor/10quality/wpmvc-addon-resources/assets/js/jquery.switch.js', $plugin_file ),
-            [ 'jquery', 'wpmvc-hideshow' ],
-            '1.0.5',
-            true
-        );
+        wpmvc_enqueue_addon_resource( 'wpmvc-select2' );
+        wpmvc_enqueue_addon_resource( 'wpmvc-hideshow' );
+        wpmvc_enqueue_addon_resource( 'wpmvc-switch' );
         if ( ! $this->ID ) {
             return;
         }
@@ -227,6 +243,9 @@ class Campaign extends Model
                 'actions' => [
                     'test' => 'n8n_mt_send_test',
                     'production' => 'n8n_mt_send_campaign',
+                ],
+                'schedule' => [
+                    'minDate' => 0,
                 ],
             ]
         );
@@ -283,6 +302,32 @@ class Campaign extends Model
         );
         foreach ( $pages as $page ) {
             $options[(string) $page->ID] = $page->post_title;
+        }
+        return $options;
+    }
+    /**
+     * Timezone select options.
+     *
+     * @return array
+     */
+    public static function timezone_options()
+    {
+        $options = [];
+        $now = time();
+        foreach ( timezone_identifiers_list() as $timezone ) {
+            $timezone_object = new \DateTimeZone( $timezone );
+            $offset_seconds = $timezone_object->getOffset( new \DateTimeImmutable( '@' . $now ) );
+            $offset_hours = (int) floor( abs( $offset_seconds ) / 3600 );
+            $offset_minutes = (int) floor( ( abs( $offset_seconds ) % 3600 ) / 60 );
+            $sign = $offset_seconds >= 0 ? '+' : '-';
+            $label = sprintf(
+                'GMT%s%02d:%02d - %s',
+                $sign,
+                $offset_hours,
+                $offset_minutes,
+                $timezone
+            );
+            $options[$timezone] = $label;
         }
         return $options;
     }

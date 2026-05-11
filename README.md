@@ -17,10 +17,13 @@ It gives editors a dedicated campaign workspace in wp-admin and sends campaign p
 - Business settings tab for company profile data used in webhook payloads.
 - Campaign strategy fields for goal, target audience, call to action pages, and alternative call to action.
 - Trigger buttons for test and production sends from the campaign editor.
+- Trigger settings include Manual and Scheduled tabs to run campaigns immediately or at a future date and time.
+- Scheduled triggers support timezone selection and webhook mode (`Prod`/`Test`).
 - AJAX-based webhook delivery to n8n endpoints using structured JSON payloads.
 - Inline trigger feedback in the editor with upstream webhook error details.
 - Payload preview tab with example JSON structure.
 - Spanish localization catalogs for WordPress Spanish locale variants.
+- Scheduled runs are logged with WPMVC logger and can be reviewed using WPMVC Status addon viewer.
 
 ## Install
 

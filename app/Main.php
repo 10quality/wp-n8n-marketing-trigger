@@ -20,6 +20,8 @@ class Main extends Bridge
         $this->add_filter( 'style_loader_src', 'AssetController@normalize_loader_src', 999, 2 );
         $this->add_filter( 'script_loader_src', 'AssetController@normalize_loader_src', 999, 2 );
         $this->add_action( 'init', 'CampaignAdminController@register_post_type' );
+        $this->add_action( 'save_post_' . \N8nMarketingTrigger\Models\Campaign::TYPE, 'CampaignController@sync_scheduled_trigger', 10, 3 );
+        $this->add_action( 'n8n_mt_run_scheduled_campaign', 'CampaignController@run_scheduled_trigger' );
     }
     /**
      * Declaration of admin only WordPress hooks.

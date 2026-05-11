@@ -26,6 +26,20 @@ class CampaignTest extends WP_UnitTestCase
         $this->assertArrayHasKey( 'x', $options );
     }
     /**
+     * Tests scheduled trigger fields are present.
+     */
+    public function test_trigger_settings_has_manual_and_scheduled_tabs()
+    {
+        $campaign = new Campaign;
+        $trigger = $campaign->metaboxes['trigger_settings'];
+        $this->assertArrayHasKey( 'manual', $trigger['tabs'] );
+        $this->assertArrayHasKey( 'scheduled', $trigger['tabs'] );
+        $this->assertArrayHasKey( 'scheduled_enabled', $trigger['tabs']['scheduled']['fields'] );
+        $this->assertArrayHasKey( 'scheduled_datetime', $trigger['tabs']['scheduled']['fields'] );
+        $this->assertArrayHasKey( 'scheduled_timezone', $trigger['tabs']['scheduled']['fields'] );
+        $this->assertArrayHasKey( 'scheduled_webhook', $trigger['tabs']['scheduled']['fields'] );
+    }
+    /**
      * Tests call-to-action options are loaded from pages.
      */
     public function test_call_to_action_options_uses_site_pages()
@@ -40,6 +54,16 @@ class CampaignTest extends WP_UnitTestCase
         $options = Campaign::call_to_action_options();
         $this->assertArrayHasKey( (string) $page_id, $options );
         $this->assertSame( 'Pricing', $options[(string) $page_id] );
+    }
+    /**
+     * Tests timezone options are populated.
+     */
+    public function test_timezone_options_are_available()
+    {
+        $options = Campaign::timezone_options();
+        $this->assertNotEmpty( $options );
+        $this->assertArrayHasKey( 'UTC', $options );
+        $this->assertStringContainsString( 'GMT', $options['UTC'] );
     }
     /**
      * Tests campaign trigger view when campaign is not saved.
